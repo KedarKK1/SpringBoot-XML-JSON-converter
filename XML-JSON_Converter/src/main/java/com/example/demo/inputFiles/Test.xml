@@ -1,0 +1,35 @@
+<ns4:ReqMnt
+	xmlns:ns2="http://test.com/"
+	xmlns:ns3="http://test.com/" >
+	<Head ver="2.0" ts="" orgId="" msgId="" prodType= "IMPS"
+callbackEndpointIP="192.168.*.*:443"/>
+	<Txn Ref="" id="" initiationMode="" note="" orgRrn=""
+orgTxnDate="" orgSampleId="" purpose="" refCategory="" orgMsgId="" refId="" refUrl="" ts="" type=" "/>
+	<Payer addr="" name="" seqNum="" type="PERSON|ENTITY" code="">
+		<Info>
+			<Identity id="" type="" verifiedUser="" />
+			<Rating verifiedRating="TRUE"/>
+		</Info>
+		<Device>
+			<Tag name="MOBILE" value=""/>
+			<Tag name="LOCATION" value="" />
+			<Tag name="TYPE" value=""/>
+			<Tag name="dumAccpId" value=""/>
+			<Tag name="dumAccpIdCode" value=""/>
+		</Device>
+		<Ac addrType="MOBILE">
+			<Detail name="MMID" value=""/>
+			<Detail name="MOBNUM" value=""/>
+			<Detail name="ACTYPE" value="GAMING"/>
+		</Ac>
+		<Amount value="" curr="USD"></Amount>
+	</Payer>
+	<Issuer seqNum="" type="" code="">
+		<Amount value="" curr="INR"></Amount>
+		<Ac addrType="ACCOUNT">
+			<Detail name="IFSC" value=""/>
+			<Detail name="ACTYPE" value="GAMING"/>
+			<Detail name="ACNUM" value=""/>
+		</Ac>
+	</Issuer>
+</ns4:ReqMnt>
