@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "5e34cb21-f63e-481a-b7d0-e0650b19cd6c",
+		"name": "Rhythmflows Solutions Interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22901034"
+	},
+	"item": [
+		{
+			"name": "Xml To Json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<ns4:ReqMnt\r\n\txmlns:ns2=\"http://test.com/\"\r\n\txmlns:ns3=\"http://test.com/\" >\r\n\t<Head ver=\"2.0\" ts=\"\" orgId=\"\" msgId=\"\" prodType= \"IMPS\"\r\ncallbackEndpointIP=\"192.168.*.*:443\"/>\r\n\t<Txn Ref=\"\" id=\"\" initiationMode=\"\" note=\"\" orgRrn=\"\"\r\norgTxnDate=\"\" orgSampleId=\"\" purpose=\"\" refCategory=\"\" orgMsgId=\"\" refId=\"\" refUrl=\"\" ts=\"\" type=\" \"/>\r\n\t<Payer addr=\"\" name=\"\" seqNum=\"\" type=\"PERSON|ENTITY\" code=\"\">\r\n\t\t<Info>\r\n\t\t\t<Identity id=\"\" type=\"\" verifiedUser=\"\" />\r\n\t\t\t<Rating verifiedRating=\"TRUE\"/>\r\n\t\t</Info>\r\n\t\t<Device>\r\n\t\t\t<Tag name=\"MOBILE\" value=\"\"/>\r\n\t\t\t<Tag name=\"LOCATION\" value=\"\" />\r\n\t\t\t<Tag name=\"TYPE\" value=\"\"/>\r\n\t\t\t<Tag name=\"dumAccpId\" value=\"\"/>\r\n\t\t\t<Tag name=\"dumAccpIdCode\" value=\"\"/>\r\n\t\t</Device>\r\n\t\t<Ac addrType=\"MOBILE\">\r\n\t\t\t<Detail name=\"MMID\" value=\"\"/>\r\n\t\t\t<Detail name=\"MOBNUM\" value=\"\"/>\r\n\t\t\t<Detail name=\"ACTYPE\" value=\"GAMING\"/>\r\n\t\t</Ac>\r\n\t\t<Amount value=\"\" curr=\"USD\"></Amount>\r\n\t</Payer>\r\n\t<Issuer seqNum=\"\" type=\"\" code=\"\">\r\n\t\t<Amount value=\"\" curr=\"INR\"></Amount>\r\n\t\t<Ac addrType=\"ACCOUNT\">\r\n\t\t\t<Detail name=\"IFSC\" value=\"\"/>\r\n\t\t\t<Detail name=\"ACTYPE\" value=\"GAMING\"/>\r\n\t\t\t<Detail name=\"ACNUM\" value=\"\"/>\r\n\t\t</Ac>\r\n\t</Issuer>\r\n</ns4:ReqMnt>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xmlToJson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xmlToJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON To XML",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ns4:ReqMnt\": {\r\n    \"Payer\": {\r\n        \"Ac\": {\r\n            \"Detail\": [\r\n                {\r\n                    \"name\": \"MMID\",\r\n                    \"value\": \"\"\r\n                },\r\n                {\r\n                    \"name\": \"MOBNUM\",\r\n                    \"value\": \"\"\r\n                },\r\n                {\r\n                    \"name\": \"ACTYPE\",\r\n                    \"value\": \"GAMING\"\r\n                }\r\n            ],\r\n            \"addrType\": \"MOBILE\"\r\n        },\r\n        \"code\": \"\",\r\n        \"seqNum\": \"\",\r\n        \"Device\": {\"Tag\": [\r\n            {\r\n                \"name\": \"MOBILE\",\r\n                \"value\": \"\"\r\n            },\r\n            {\r\n                \"name\": \"LOCATION\",\r\n                \"value\": \"\"\r\n            },\r\n            {\r\n                \"name\": \"TYPE\",\r\n                \"value\": \"\"\r\n            },\r\n            {\r\n                \"name\": \"dumAccpId\",\r\n                \"value\": \"\"\r\n            },\r\n            {\r\n                \"name\": \"dumAccpIdCode\",\r\n                \"value\": \"\"\r\n            }\r\n        ]},\r\n        \"Amount\": {\r\n            \"curr\": \"USD\",\r\n            \"value\": \"\"\r\n        },\r\n        \"name\": \"\",\r\n        \"addr\": \"\",\r\n        \"type\": \"PERSON|ENTITY\",\r\n        \"Info\": {\r\n            \"Rating\": {\"verifiedRating\": \"TRUE\"},\r\n            \"Identity\": {\r\n                \"verifiedUser\": \"\",\r\n                \"id\": \"\",\r\n                \"type\": \"\"\r\n            }\r\n        }\r\n    },\r\n    \"Head\": {\r\n        \"callbackEndpointIP\": \"192.168.*.*:443\",\r\n        \"ver\": \"2.0\",\r\n        \"msgId\": \"\",\r\n        \"prodType\": \"IMPS\",\r\n        \"orgId\": \"\",\r\n        \"ts\": \"\"\r\n    },\r\n    \"xmlns:ns2\": \"http://test.com/\",\r\n    \"Issuer\": {\r\n        \"Ac\": {\r\n            \"Detail\": [\r\n                {\r\n                    \"name\": \"IFSC\",\r\n                    \"value\": \"\"\r\n                },\r\n                {\r\n                    \"name\": \"ACTYPE\",\r\n                    \"value\": \"GAMING\"\r\n                },\r\n                {\r\n                    \"name\": \"ACNUM\",\r\n                    \"value\": \"\"\r\n                }\r\n            ],\r\n            \"addrType\": \"ACCOUNT\"\r\n        },\r\n        \"code\": \"\",\r\n        \"seqNum\": \"\",\r\n        \"Amount\": {\r\n            \"curr\": \"INR\",\r\n            \"value\": \"\"\r\n        },\r\n        \"type\": \"\"\r\n    },\r\n    \"xmlns:ns3\": \"http://test.com/\",\r\n    \"Txn\": {\r\n        \"note\": \"\",\r\n        \"refCategory\": \"\",\r\n        \"purpose\": \"\",\r\n        \"orgMsgId\": \"\",\r\n        \"orgSampleId\": \"\",\r\n        \"orgRrn\": \"\",\r\n        \"type\": \" \",\r\n        \"Ref\": \"\",\r\n        \"id\": \"\",\r\n        \"refId\": \"\",\r\n        \"refUrl\": \"\",\r\n        \"initiationMode\": \"\",\r\n        \"orgTxnDate\": \"\",\r\n        \"ts\": \"\"\r\n    }\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jsonToXml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jsonToXml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

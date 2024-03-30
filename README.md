@@ -1,16 +1,21 @@
-# TO-Do
-
-Give your input files in 1. src/main/java/com/example/demo/inputFiles/Test.xml & 2. src/main/java/com/example/demo/inputFiles/Test.json
-
 # Routes -
 
 ```
-/xmlToJson -> converts json to xml from file Test.json & saves it in src/main/java/com/example/demo/outputFiles/XML-to-JSON.json
-```
+/xmlToJson -> converts json to xml from input given in the body(Body should be in XML format in postman)
 
 ```
-/jsonToXml -> converts json to xml from file Test.json & saves it in src/main/java/com/example/demo/outputFiles/JSON-to-XML.xml
+
+<img src="./Screenshots/ss1.png" alt="xmlToJson postman" >
+
 ```
+/jsonToXml -> converts json to xml from input given in the body(Body should be in either text or JSON format in postman)
+```
+
+<img src="./Screenshots/ss2.png" alt="jsonToXml postman" >
+
+# Note -
+
+You can also use the postman collection given above for getting the urls and their input types.
 
 # Note
 
